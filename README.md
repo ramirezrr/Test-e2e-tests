@@ -1,10 +1,45 @@
-# 🚀 Integración Continua con Jenkins y Docker
+# Pruebas End-to-End para la Gestión de Veterinarios y Propietarios
 
-Este proyecto está configurado para ejecutar pruebas e2e utilizando Jenkins y Docker. A continuación, se detallan los pasos para ejecutar las pruebas e2e, los comandos necesarios y los requisitos del entorno.
+Este repositorio contiene pruebas end-to-end (E2E) para la gestión de veterinarios y propietarios utilizando Cucumber, Serenity BDD y Java. La aplicación bajo prueba está disponible en [Spring Framework Pet Clinic](https://spring-framework-petclinic-qctjpkmzuq-od.a.run.app/).
 
-## 🧪 Pruebas de End-to-End
+## Tecnologías Utilizadas
+- **Cucumber**: Para desarrollo basado en comportamiento (BDD).
+- **Serenity BDD**: Para gestión e informes de resultados de pruebas.
+- **Java 17**: Lenguaje de programación.
+- **Maven 3.9.6**: Gestión de construcción y dependencias.
 
-Las pruebas e2e aseguran que los componentes de la aplicación funcionen correctamente en conjunto. En este proyecto, utilizamos Maven para gestionar y ejecutar las pruebas.
+## Funcionalidad: Gestión de Veterinarios y Propietarios
+
+El archivo de funcionalidades incluye escenarios para listar y verificar los datos de veterinarios y propietarios.
+
+### Escenarios
+
+#### 1. Listar Todos los Propietarios
+- **Etiqueta:** `@listarPropietarios`
+- **Escenario:** Listar todos los propietarios
+- **Pasos:**
+    - **Dado** que el cliente navega a la página de propietarios
+    - **Cuando** el cliente realiza una acción para listar propietarios
+    - **Entonces** la página debe mostrar una lista válida de propietarios
+
+#### 2. Listar Todos los Veterinarios
+- **Etiqueta:** `@ListarVeterinarians`
+- **Escenario:** Listar todos los veterinarios
+- **Pasos:**
+    - **Dado** que el cliente navega a la página de veterinarios
+    - **Cuando** el cliente realiza una acción para listar veterinarios
+    - **Entonces** la página debe mostrar una lista válida de veterinarios
+
+#### 3. Ver la Lista de Veterinarios en Formato JSON
+- **Etiqueta:** `@VerJsonDeListaVeterinarians`
+- **Escenario:** El cliente ve la lista de veterinarios en formato JSON
+- **Pasos:**
+    - **Dado** que el cliente navega a la página de veterinarios
+    - **Cuando** el cliente realiza una acción para listar veterinarios
+    - **Entonces** la página debe mostrar un enlace para abrir el JSON
+    - **Cuando** el cliente hace clic en el enlace JSON
+    - **Entonces** el cliente debe ver el JSON con la lista de veterinarios
+
 
 ### Ejecución de Pruebas
 
@@ -12,9 +47,4 @@ Para ejecutar las pruebas e2e, utiliza el siguiente comando:
 
 ```sh
 mvn clean verify
-```
-
-## 📦 Ejecución de Pruebas en Docker
-```sh
-docker run --rm -v $(pwd):/usr/src/app -w /usr/src/app -e BASE_URI=${BASE_URI} maven:3.8.8-eclipse-temurin-17-alpine mvn clean verify
 ```

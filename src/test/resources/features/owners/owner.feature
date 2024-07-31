@@ -1,6 +1,6 @@
 # language: en
-@gestionarPropietarios
-Feature: Gestionar Propietarios
+@gestionarVeterinariansYPropietarios
+Feature: Gestionar Veterinarians y Propietarios
 
   @listarPropietarios
   Scenario: Listar todos propietarios
