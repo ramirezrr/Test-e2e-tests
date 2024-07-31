@@ -40,7 +40,7 @@ El archivo de funcionalidades incluye escenarios para listar y verificar los dat
     - **Cuando** el cliente hace clic en el enlace JSON
     - **Entonces** el cliente debe ver el JSON con la lista de veterinarios
 
-
+![img.png](evidencia.png)
 ### Ejecución de Pruebas
 
 Para ejecutar las pruebas e2e, utiliza el siguiente comando:
